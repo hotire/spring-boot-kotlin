@@ -11,3 +11,7 @@ plugins {
     kotlin("kapt") version kotlinVersion
     kotlin("plugin.allopen") version kotlinVersion
 }
+
+group = "com.github.hotire"
+version = "1.0-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_11
