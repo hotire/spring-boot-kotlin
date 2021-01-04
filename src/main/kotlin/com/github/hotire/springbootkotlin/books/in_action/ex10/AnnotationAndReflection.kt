@@ -38,14 +38,14 @@ interface HashAware {
                 .firstOrNull()
     }
 
-    fun  hasAnnotation(kProperty: KProperty1<*>): Boolean = findAnnotation(kProperty) != null
+    fun hasAnnotation(kProperty: KProperty1<*>): Boolean = findAnnotation(kProperty) != null
 
     fun getHash() : String {
         return this::class.declaredMemberProperties
                 .asSequence()
                 .filter { hasAnnotation(it)}
                 .sortedBy { findAnnotation(it)!!.order.value }
-                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this) }
+                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this)?.getHash() }
                 .joinToString()
                 .sha256();
     }
@@ -61,6 +61,7 @@ interface PersonHashAware : HashAware {
 }
 
 class PersonEntity(override val name: String, override val age: Int) : PersonHashAware {
+    @HashAware.HashCode(Order(3))
     val person: PersonHashAware = object:PersonHashAware {
         override val name: String
             get() = this@PersonEntity.name
