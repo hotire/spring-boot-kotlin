@@ -15,3 +15,16 @@ plugins {
 group = "com.github.hotire"
 version = "1.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
+configurations {
+
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven(uri("http://repo.linecorp.com/content/groups/snapshots/"))
+    maven(uri("http://repo.linecorp.com/content/groups/releases/"))
+}
