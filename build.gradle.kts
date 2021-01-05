@@ -28,3 +28,27 @@ repositories {
     maven(uri("http://repo.linecorp.com/content/groups/snapshots/"))
     maven(uri("http://repo.linecorp.com/content/groups/releases/"))
 }
+
+
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict", "-Xenable-jvm-default", "-Xjvm-default=enable")
+        jvmTarget = "11"
+    }
+}
+
+sourceSets {
+    create("integrationTest") {
+        withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
+            kotlin.srcDir("src/testIntegration/kotlin")
+            resources.srcDir("src/testIntegration/resources")
+            compileClasspath += sourceSets["main"].output + configurations["testRuntimeClasspath"]
+            runtimeClasspath += output + compileClasspath + sourceSets["test"].runtimeClasspath
+        }
+    }
+}
