@@ -29,7 +29,9 @@ repositories {
     maven(uri("http://repo.linecorp.com/content/groups/releases/"))
 }
 
-
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web")
+}
 
 tasks.withType<Test> {
     useJUnitPlatform()
