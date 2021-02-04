@@ -1,4 +1,4 @@
-package com.github.hotire.springbootkotlin.books.core
+package com.github.hotire.springbootkotlin.core
 
 
 fun main() {
