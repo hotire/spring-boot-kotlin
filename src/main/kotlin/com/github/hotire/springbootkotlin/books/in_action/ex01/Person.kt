@@ -7,6 +7,4 @@ fun main(args: Array<String>) {
 
     val oldest = persons.maxBy { it.age ?: 0 }
     print("max : $oldest")
-
 }
-

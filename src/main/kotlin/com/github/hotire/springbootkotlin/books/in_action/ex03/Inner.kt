@@ -5,7 +5,7 @@ class Outer {
 
     class StaticInner {
         var age: Int? = 0
-        fun toOuter(name : String) : Outer {
+        fun toOuter(name: String): Outer {
             val outer = Outer()
             outer.name = name
             return outer
@@ -13,13 +13,13 @@ class Outer {
     }
 
     inner class Inner {
-        fun outReference() : Outer = this@Outer
+        fun outReference(): Outer = this@Outer
     }
 }
 
-fun main(args : Array<String>) {
-    val outer = Outer();
-    val staticInner = Outer.StaticInner();
+fun main(args: Array<String>) {
+    val outer = Outer()
+    val staticInner = Outer.StaticInner()
     staticInner.toOuter("hello")
 
     val inner = outer.Inner()

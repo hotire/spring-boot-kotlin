@@ -10,10 +10,8 @@ class User constructor(name: String) {
 
 class View {
     constructor(name: String) {
-
     }
     constructor(name: String, count: Int) {
-
     }
 
     init {
@@ -24,7 +22,7 @@ class View {
     }
 }
 
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     val user = User("hotire")
     println(user)
 

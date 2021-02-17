@@ -14,12 +14,12 @@ fun String.sha256(): String {
 
 private fun hashString(input: String, algorithm: String): String {
     return MessageDigest
-            .getInstance(algorithm)
-            .digest(input.toByteArray())
-            .fold("", { str, it -> str + "%02x".format(it) })
+        .getInstance(algorithm)
+        .digest(input.toByteArray())
+        .fold("", { str, it -> str + "%02x".format(it) })
 }
 
-fun Any.getHash() : String  {
+fun Any.getHash(): String {
     if (this is HashAware) {
         return getHash()
     }
@@ -32,43 +32,40 @@ interface HashAware {
     @Target(AnnotationTarget.PROPERTY)
     annotation class HashCode(val order: Order = Order())
 
-    public fun findAnnotation(kProperty: KProperty1<*>) : HashCode? {
+    public fun findAnnotation(kProperty: KProperty1<*>): HashCode? {
         return kProperty.findAnnotation<HashCode>() ?: this::class.superclasses
-                .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>() }
-                .firstOrNull()
+            .map { it.declaredMemberProperty(kProperty.name)?.findAnnotation<HashCode>() }
+            .firstOrNull()
     }
 
     fun hasAnnotation(kProperty: KProperty1<*>): Boolean = findAnnotation(kProperty) != null
 
-    fun getHash() : String {
+    fun getHash(): String {
         return this::class.declaredMemberProperties
-                .asSequence()
-                .filter { hasAnnotation(it)}
-                .sortedBy { findAnnotation(it)!!.order.value }
-                .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this)?.getHash() }
-                .joinToString()
-                .sha256();
+            .asSequence()
+            .filter { hasAnnotation(it) }
+            .sortedBy { findAnnotation(it)!!.order.value }
+            .map { getPrefix() + findAnnotation(it)!!.order.value + it.call(this)?.getHash() }
+            .joinToString()
+            .sha256()
     }
 
-    fun getPrefix() : String = this::class.simpleName ?: ""
+    fun getPrefix(): String = this::class.simpleName ?: ""
 }
 
 interface PersonHashAware : HashAware {
     @HashAware.HashCode(Order(1))
-    val name : String
+    val name: String
     @HashAware.HashCode(Order(2))
     val age: Int
 }
 
 class PersonEntity(override val name: String, override val age: Int) : PersonHashAware {
     @HashAware.HashCode(Order(3))
-    val person: PersonHashAware = object:PersonHashAware {
+    val person: PersonHashAware = object : PersonHashAware {
         override val name: String
             get() = this@PersonEntity.name
         override val age: Int
             get() = this@PersonEntity.age
     }
 }
-
-
-

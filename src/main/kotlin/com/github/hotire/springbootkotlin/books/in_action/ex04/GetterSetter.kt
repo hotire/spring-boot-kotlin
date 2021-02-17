@@ -1,9 +1,9 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex04
 
 class Account(val name: String) {
-    var address : String = "undefined"
+    var address: String = "undefined"
         set(value: String) {
-            println("${field} -> ${value}".trimIndent())
+            println("$field -> $value".trimIndent())
             field = value
         }
 }

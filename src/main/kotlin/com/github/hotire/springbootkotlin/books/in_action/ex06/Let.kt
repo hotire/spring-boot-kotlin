@@ -7,5 +7,5 @@ fun ifPresent(obj: Any?, consumer: Consumer<Any>) {
 }
 
 fun ifPresent(obj: Any?, consumer: (Any) -> Unit) {
-    obj ?.let { it -> consumer(it)}
+    obj ?.let { it -> consumer(it) }
 }

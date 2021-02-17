@@ -7,7 +7,7 @@ class User(var name: String, var address: String)
 fun save(user: User) {
     fun validate(value: String, fieldName: String) {
         if (value.isBlank()) {
-            throw RuntimeException("Can't save user, empty ${fieldName}")
+            throw RuntimeException("Can't save user, empty $fieldName")
         }
     }
     validate(user.name, "name")
@@ -16,8 +16,7 @@ fun save(user: User) {
     // save
 }
 
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     val user = User("hotire", "seoul")
     save(user)
 }
-

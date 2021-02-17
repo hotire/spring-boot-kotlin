@@ -10,9 +10,9 @@ fun main(args: Array<String>) {
     print(convert(Color.BLUE))
 }
 
-fun convert(color: Color) : String =
-        when(color) {
-            Color.RED -> "1"
-            Color.ORANGE -> "2"
-            Color.BLUE -> "3"
-        }
+fun convert(color: Color): String =
+    when (color) {
+        Color.RED -> "1"
+        Color.ORANGE -> "2"
+        Color.BLUE -> "3"
+    }

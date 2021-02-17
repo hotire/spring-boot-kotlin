@@ -15,6 +15,6 @@ internal class ItemTest {
         item.alias = expected
 
         // then
-        assertThat(item.alias).isEqualTo(expected);
+        assertThat(item.alias).isEqualTo(expected)
     }
 }

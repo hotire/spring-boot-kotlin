@@ -4,13 +4,12 @@ interface Event {
     fun click()
 }
 
-
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     event(object : Event {
         var count = 0
         override fun click() {
             ++count
-            println("click ${count}")
+            println("click $count")
         }
     })
 }

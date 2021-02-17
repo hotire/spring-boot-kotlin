@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    val kotlinVersion = "1.3.72"
+    val kotlinVersion = "1.4.21"
 
     id("org.springframework.boot") version "2.2.4.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
@@ -22,6 +22,7 @@ configurations {
         extendsFrom(configurations.annotationProcessor.get())
     }
 }
+val ktlint by configurations.creating
 
 repositories {
     mavenCentral()
@@ -43,6 +44,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+
+    ktlint("com.pinterest:ktlint:0.40.0")
 }
 
 tasks.withType<Test> {
@@ -65,4 +68,27 @@ sourceSets {
             runtimeClasspath += output + compileClasspath + sourceSets["test"].runtimeClasspath
         }
     }
+}
+
+val outputDir = "${project.buildDir}/reports/ktlint/"
+val inputFiles = project.fileTree(mapOf("dir" to "src", "include" to "**/*.kt"))
+
+val ktlintCheck by tasks.creating(JavaExec::class) {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+
+    description = "Check Kotlin code style."
+    classpath = ktlint
+    main = "com.pinterest.ktlint.Main"
+    args = listOf("src/**/*.kt")
+}
+
+val ktlintFormat by tasks.creating(JavaExec::class) {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+
+    description = "Fix Kotlin code style deviations."
+    classpath = ktlint
+    main = "com.pinterest.ktlint.Main"
+    args = listOf("-F", "src/**/*.kt")
 }

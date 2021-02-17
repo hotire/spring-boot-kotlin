@@ -1,10 +1,8 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex04
 
-
 class A {
     companion object {
         fun bar() {
-
         }
     }
 }
@@ -12,14 +10,12 @@ class A {
 class B {
     companion object Name {
         fun naming() {
-
         }
     }
 }
 
-
 interface JSONFactory<T> {
-    fun fromJSON(text: String) : T
+    fun fromJSON(text: String): T
 }
 
 class C {
@@ -31,7 +27,7 @@ class C {
 }
 
 fun main(args: Array<String>) {
-    A.bar();
+    A.bar()
     B.Name.naming()
     C.fromJSON("")
 }

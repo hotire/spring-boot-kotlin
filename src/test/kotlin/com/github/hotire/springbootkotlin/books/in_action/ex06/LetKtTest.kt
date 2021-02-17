@@ -6,6 +6,6 @@ internal class LetKtTest {
     @Test
     fun ifPresent() {
         val s = "abc"
-        ifPresent(s) {println(it)}
+        ifPresent(s) { println(it) }
     }
 }

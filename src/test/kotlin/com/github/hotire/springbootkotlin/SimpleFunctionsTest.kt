@@ -2,7 +2,7 @@ package com.github.hotire.springbootkotlin
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import java.util.*
+import java.util.Arrays
 
 class SimpleFunctionsTest {
     /**
@@ -20,11 +20,10 @@ class SimpleFunctionsTest {
      * return the list in a JSON format (e.g., "[a, b, c]")
      */
     private fun joinOptions(options: Collection<String>): String =
-            options.joinToString(prefix = "[", postfix = "]")
+        options.joinToString(prefix = "[", postfix = "]")
 
     @Test
     fun test_joinOptions() {
         assertThat(joinOptions(Arrays.asList("a", "b", "c"))).isEqualTo("[a, b, c]")
     }
-
 }

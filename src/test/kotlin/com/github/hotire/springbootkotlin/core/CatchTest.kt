@@ -20,16 +20,13 @@ class CatchTest {
 
     @Test
     fun orEmpty() {
-
     }
 
     @Test
     fun requireNoNulls() {
-
     }
 
     @Test
     fun listOfNotNull() {
-
     }
 }

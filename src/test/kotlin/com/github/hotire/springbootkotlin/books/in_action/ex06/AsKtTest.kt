@@ -7,10 +7,10 @@ internal class AsKtTest {
     @Test
     fun isString() {
         // given
-        val s  = "abc"
+        val s = "abc"
 
         // when
-        val result = com.github.hotire.springbootkotlin.books.in_action.ex06.isString(s);
+        val result = com.github.hotire.springbootkotlin.books.in_action.ex06.isString(s)
 
         // then
         assertThat(result).isEqualTo(true)
