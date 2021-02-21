@@ -41,7 +41,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     // test
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+    implementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
 
