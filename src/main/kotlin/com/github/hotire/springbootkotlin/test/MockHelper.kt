@@ -28,9 +28,9 @@ data class MockHelper(val mockMap: MutableMap<KClass<*>, Any> = mutableMapOf()) 
     }
 
     // TODO
-    fun <T> createInstance(type: KClass<T>): T {
+//    fun <T> createInstance(type: KClass<T>): T {
 //        type.constructors.map {
 //            return it.call(it.typeParameters.map { it. } })
 //        }
-    }
+//    }
 }
