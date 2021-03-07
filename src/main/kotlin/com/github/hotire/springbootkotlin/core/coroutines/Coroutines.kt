@@ -34,7 +34,6 @@ fun main() {
     }
 }
 
-
 fun join() = runBlocking {
     // 시작
     val job = GlobalScope.launch { // 새로운 코루틴을 시작하고 job에 대한 참조를 유지한다.
@@ -45,5 +44,3 @@ fun join() = runBlocking {
     job.join() // 하위 코루틴이 완료될 때까지 기다린다.
     // 끝
 }
-
-
