@@ -1,7 +1,5 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex02
 
-import java.awt.Color.RED
-
 enum class Color {
     RED, ORANGE, BLUE
 }

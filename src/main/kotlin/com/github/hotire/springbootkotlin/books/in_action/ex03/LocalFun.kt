@@ -1,7 +1,5 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex03
 
-import java.lang.RuntimeException
-
 class User(var name: String, var address: String)
 
 fun save(user: User) {

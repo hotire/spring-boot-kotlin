@@ -1,7 +1,8 @@
 package com.github.hotire.springbootkotlin.books.in_action.ex10;
 
-import javax.validation.constraints.NotNull;
 import java.util.Arrays;
+
+import javax.validation.constraints.NotNull;
 
 public class JavaReflection {
 
