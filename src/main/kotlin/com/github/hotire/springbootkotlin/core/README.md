@@ -61,3 +61,6 @@ runBlocking 과 coroutineScope 는 둘 다 자신 블록 내부의 동작이 완
 이 둘의 주된 차이점은 runBlocking 은 메서드가 대기 중인 현재 스레드를 차단하는 반면 coroutineScope 는 중단되는 동안 다른 사용을 위해 기본 스레드를 해제한다는 것입니다. 
 이런 차이점 때문에 runBlocking 은 정규 함수이고 coroutineScope 는 일시 중단 함수입니다.
 
+
+- runBlocking.launch vs GlobalScope.launch
+https://stackoverflow.com/questions/54842169/kotlin-coroutines-globalscope-launch-vs-runblocking/54855870

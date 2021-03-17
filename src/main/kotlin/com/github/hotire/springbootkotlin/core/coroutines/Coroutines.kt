@@ -59,7 +59,24 @@ fun main() {
             println("Task from coroutine scope") // 이 라인은 nested launch가 출력되기 전에 실행됩니다.
         }
 
+        launch {
+            delay(200L)
+            println("Task from runBlocking2")
+        }
+
         println("Coroutine scope is over") // 이 라인은 하위 launch가 완료되기 전까지 실행되지 않습니다.
+    }
+
+    runBlocking {
+// 시작
+        GlobalScope.launch {
+            repeat(1000) { i ->
+                println("I'm sleeping $i ...")
+                delay(500L)
+            }
+        }
+        delay(1300L) // 지연 후 종료
+// 끝
     }
 }
 
