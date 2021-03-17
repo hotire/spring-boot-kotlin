@@ -1,6 +1,7 @@
 package com.github.hotire.springbootkotlin.core.coroutines
 
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -13,21 +14,26 @@ fun main() {
         println("World! 1") // 딜레이 후 프린트
     }
     println("Hello, 1") // 코루틴이 딜레이를 주는 동안 메인 스레드는 계속 실행 중
-    Thread.sleep(2000L) // JVM의 작업을 유지하기 위해 메인 스레드를 2초간 블록
+    Thread.sleep(3000L) // JVM의 작업을 유지하기 위해 메인 스레드를 2초간 블록
 
     GlobalScope.launch {
-        delay(1000L)
-        println("World! 2")
+        delay(3000L)
+        println("World! 2.4")
     }
     println("Hello, 2") // 메인 스레드를 바로 지속됨.
     runBlocking { // 하지만 여기에서 메인스레드가 블록된다.
-        delay(2000L)
+        println("Hello, 2.1") // 메인 스레드를 바로 지속됨.
+        delay(1000L)
+        println("Hello, 2.2") // 메인 스레드를 바로 지속됨.
     }
+    println("Hello, 2.3")
+
+    Thread.sleep(3000L) // JVM의 작업을 유지하기 위해 메인 스레드를 2초간 블록
 
     runBlocking { // main 코루틴 시작
         GlobalScope.launch {
             delay(1000L)
-            println("World! ")
+            println("World! 3")
         }
         println("Hello, 3")
         delay(2000L)
