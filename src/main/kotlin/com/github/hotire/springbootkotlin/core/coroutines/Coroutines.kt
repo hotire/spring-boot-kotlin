@@ -38,6 +38,29 @@ fun main() {
         println("Hello, 3")
         delay(2000L)
     }
+
+    Thread.sleep(3000L)
+
+    runBlocking {
+        launch {
+            delay(200L)
+            println("Task from runBlocking")
+        }
+
+        //  coroutineScope builder를 사용하여 자신만의 스코프를 선언할 수 있습니다.
+        //  이것은 코루틴의 범위를 만들고 모든 하위 launch들이 완료될 때까지 완료되지 않습니다.
+        coroutineScope { // 코루틴 스코프 생성
+            launch {
+                delay(500L)
+                println("Task from nested launch")
+            }
+
+            delay(100L)
+            println("Task from coroutine scope") // 이 라인은 nested launch가 출력되기 전에 실행됩니다.
+        }
+
+        println("Coroutine scope is over") // 이 라인은 하위 launch가 완료되기 전까지 실행되지 않습니다.
+    }
 }
 
 fun join() = runBlocking {
