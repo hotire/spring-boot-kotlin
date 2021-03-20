@@ -4,6 +4,9 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.TestFactory
 
+/**
+ * https://github.com/gradle/gradle/issues/5975
+ */
 internal class TestFactoryTest {
     @TestFactory
     fun testSquares() = listOf(
