@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 internal class MockHelperTest {
 
     class Service {
-        fun get() : String = "a"
+        fun get(): String = "a"
     }
 
     @Test
