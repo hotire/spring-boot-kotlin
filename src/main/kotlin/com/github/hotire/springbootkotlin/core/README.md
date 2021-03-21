@@ -64,3 +64,15 @@ runBlocking 과 coroutineScope 는 둘 다 자신 블록 내부의 동작이 완
 
 - runBlocking.launch vs GlobalScope.launch
 https://stackoverflow.com/questions/54842169/kotlin-coroutines-globalscope-launch-vs-runblocking/54855870
+
+
+## Suspend
+
+코틀린 컴파일러는 suspend 함수를 가져와서 유한한 상태 머신을 사용하여 최적화된 버전의 콜백으로 변환합니다.
+
+~~~kotlin
+interface Continuation<in T> {
+  public val context: CoroutineContext
+  public fun resumeWith(value: Result<T>)
+}
+~~~
