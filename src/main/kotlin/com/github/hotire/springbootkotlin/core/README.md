@@ -76,3 +76,12 @@ interface Continuation<in T> {
   public fun resumeWith(value: Result<T>)
 }
 ~~~
+
+### Hunting to know BLOCKING vs SUSPENDING
+https://medium.com/mobile-app-development-publication/understanding-suspend-function-of-coroutines-de26b070c5ed
+
+A process is blocked when there is some external reason that it can not be restarted, e.g., an I/O device is unavailable, or a semaphore file is locked.
+A process is suspended means that the OS has stopped executing it, but that could just be for time-slicing (multitasking). There is no implication that the process can not be resumed immediately.
+
+BLOCKING: Function A has to be completed before Function B continues. The thread is locked for Function A to complete its execution.
+SUSPENDING: Function A, while has started, could be suspended, and let Function B execute, then only resume later. The thread is not locked by Function A.
