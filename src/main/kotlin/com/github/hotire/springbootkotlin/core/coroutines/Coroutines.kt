@@ -10,6 +10,7 @@ class Coroutines
 
 fun main() {
     GlobalScope.launch { // 백그라운드에서 작업하는 새로운 코루틴
+        println("start 1") // 딜레이 후 프린트
         delay(1000L) // non-blocking한 1초 딜레이
         println("World! 1") // 딜레이 후 프린트
     }
