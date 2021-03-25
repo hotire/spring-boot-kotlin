@@ -83,5 +83,12 @@ https://medium.com/mobile-app-development-publication/understanding-suspend-func
 A process is blocked when there is some external reason that it can not be restarted, e.g., an I/O device is unavailable, or a semaphore file is locked.
 A process is suspended means that the OS has stopped executing it, but that could just be for time-slicing (multitasking). There is no implication that the process can not be resumed immediately.
 
+
+
 BLOCKING: Function A has to be completed before Function B continues. The thread is locked for Function A to complete its execution.
+- 함수 B가 실행되기 위해선, 함수 A가 완료되어야 합니다. 스레드는 A가 끝날떄까지 lock이 걸려있다.(함수 A에 의해 Lock이 걸렸다라고 말할 수 있다.)
+
 SUSPENDING: Function A, while has started, could be suspended, and let Function B execute, then only resume later. The thread is not locked by Function A.
+- 함수 A가 시작된 동안 일시 중지되었다가, 함수 B를 실행한 뒤 다시 A를 실행할 수 있다. 즉 스레드는 lock이 걸리지 않았다.
+
+
