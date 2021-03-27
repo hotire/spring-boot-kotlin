@@ -58,6 +58,4 @@ fun testRunFunction() {
             println("Out ended: ${Thread.currentThread().name}")
         }
     }
-
-
 }
