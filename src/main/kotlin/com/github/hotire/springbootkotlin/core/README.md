@@ -43,8 +43,9 @@ list.chunked(3)
 ~~~
 
 
-## Coroutine
+## Coroutines
 
+https://tourspace.tistory.com/150?category=797357
 https://medium.com/hongbeomi-dev/coroutines-basic-e32053f18fdf
 
 코루틴은 동시성 프로그래밍을 가능하도록 만든 개념입니다. 나온지 꽤 오래된 기술이지만 스레드에 대한 이슈가 많아지면서 최근 다시 조명을 받게 되었습니다. 
