@@ -26,9 +26,9 @@ fun testRunFunction() {
     Thread.sleep(300)
     println("clear")
 
-    runBlocking {
+    val result = runBlocking {
         // Start a coroutine
-        launch(coroutineContext) {
+        launch {
             println("In start : ${Thread.currentThread().name}")
             Thread.sleep(200)
             println("In ended : ${Thread.currentThread().name}")
@@ -39,14 +39,16 @@ fun testRunFunction() {
             Thread.sleep(300)
             println("Out ended: ${Thread.currentThread().name}")
         }
+        "hello"
     }
+
 
     Thread.sleep(300)
     println("clear")
 
     runBlocking {
         // Start a coroutine
-        launch(coroutineContext) {
+        launch {
             println("In start : ${Thread.currentThread().name}")
             delay(300)
             println("In ended : ${Thread.currentThread().name}")
