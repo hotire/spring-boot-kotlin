@@ -42,7 +42,6 @@ fun testRunFunction() {
         "hello"
     }
 
-
     Thread.sleep(300)
     println("clear")
 
