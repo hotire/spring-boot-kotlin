@@ -11,3 +11,11 @@ class SimpleRunnable : Runnable {
         println("${Thread.currentThread()} has run.")
     }
 }
+
+fun main() {
+    val thread = SimpleThread()
+    thread.start()
+
+    val threadWithRunnable = Thread(SimpleRunnable())
+    threadWithRunnable.start()
+}
