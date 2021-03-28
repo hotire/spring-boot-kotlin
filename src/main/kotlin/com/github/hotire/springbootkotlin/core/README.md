@@ -93,3 +93,7 @@ SUSPENDING: Function A, while has started, could be suspended, and let Function 
 - 함수 A가 시작된 동안 일시 중지되었다가, 함수 B를 실행한 뒤 다시 A를 실행할 수 있다. 즉 스레드는 lock이 걸리지 않았다.
 
 
+### Threads vs Coroutines
+https://www.baeldung.com/kotlin/threads-coroutines
+- Differentiating Thread and Coroutine (launch & runBlocking) in Kotlin
+https://medium.com/mobile-app-development-publication/differentiating-thread-and-coroutine-launch-runblocking-in-kotlin-28219506c002
