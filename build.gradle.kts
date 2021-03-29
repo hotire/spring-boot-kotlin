@@ -12,6 +12,7 @@ plugins {
     kotlin("plugin.allopen") version kotlinVersion
 }
 
+extra["springCloudVersion"] = "Hoxton.SR1"
 group = "com.github.hotire"
 version = "1.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
@@ -33,12 +34,14 @@ repositories {
 dependencies {
     // spring
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 
     // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j")
 
     // test
     implementation("org.springframework.boot:spring-boot-starter-test") {
@@ -47,6 +50,13 @@ dependencies {
 
     ktlint("com.pinterest:ktlint:0.40.0")
 }
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    }
+}
+
 
 tasks.withType<Test> {
     useJUnitPlatform()
