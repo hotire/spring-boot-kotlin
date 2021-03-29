@@ -55,6 +55,12 @@ https://medium.com/hongbeomi-dev/coroutines-basic-e32053f18fdf
 ### Basic
 https://medium.com/@limgyumin/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4%EC%9D%98-%EA%B8%B0%EC%B4%88-cac60d4d621b
 
+### CoroutineContext
+
+### CoroutineScope
+
+
+
 
 ### Scope builder
 
