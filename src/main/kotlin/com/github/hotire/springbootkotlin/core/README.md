@@ -60,8 +60,10 @@ https://medium.com/hongbeomi-dev/coroutines-basic-e32053f18fdf
 https://medium.com/@limgyumin/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4%EC%9D%98-%EA%B8%B0%EC%B4%88-cac60d4d621b
 
 ### CoroutineContext
+CoroutineContext 는 코루틴을 어떻게 처리 할것인지 에 대한 여러가지 정보의 집합
 
 ### CoroutineScope
+CoroutineScope 는 코루틴의 범위, 코루틴 블록을 묶음으로 제어할수 있는 단위
 
 
 
