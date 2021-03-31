@@ -9,7 +9,8 @@ class TestClient {
 
     fun getInternal(url: String): String {
         log.info(Thread.currentThread().name)
-        Thread.sleep(3000L)
+        Thread.sleep(4000L)
+        log.info("suc " + Thread.currentThread().name)
         return url
     }
 }

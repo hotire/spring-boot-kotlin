@@ -39,7 +39,10 @@ class TestController(private val testClient: TestClient) {
         log.info("hello")
 
         val deferred = listOf(
-            ClientCoroutineScope.async { testClient.getInternal("a") },
+            ClientCoroutineScope.async { if (1 == 1) throw RuntimeException() },
+            ClientCoroutineScope.async { testClient.getInternal("b") },
+            ClientCoroutineScope.async { testClient.getInternal("b") },
+            ClientCoroutineScope.async { testClient.getInternal("b") },
             ClientCoroutineScope.async { testClient.getInternal("b") }
         )
 
