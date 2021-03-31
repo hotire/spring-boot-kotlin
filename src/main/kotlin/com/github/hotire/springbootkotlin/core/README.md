@@ -47,6 +47,10 @@ list.chunked(3)
 https://tourspace.tistory.com/150?category=797357
 https://medium.com/hongbeomi-dev/coroutines-basic-e32053f18fdf
 
+코루틴이란 일시정지, 재개가 가능한 함수라고 할 수 있다. 
+
+공식 문서에서도 "Coroutines(코루틴)은 스레드를 block하지 않고, suspend할 수 있다." 라고 적혀있다.
+
 코루틴은 동시성 프로그래밍을 가능하도록 만든 개념입니다. 나온지 꽤 오래된 기술이지만 스레드에 대한 이슈가 많아지면서 최근 다시 조명을 받게 되었습니다. 
 코루틴은 Context Switching 오버헤드가 적은 Non-blocking 일종의 경량 스레드라고 할 수 있습니다. 
 코루틴은 프로그램이 실행 중일 때 특정 시점에 코루틴으로 이동하여 그 전에 실행하던 루틴을 정지하도록 하게 할 수 있습니다. 
