@@ -65,8 +65,23 @@ CoroutineContext 는 코루틴을 어떻게 처리 할것인지 에 대한 여�
 ### CoroutineScope
 CoroutineScope 는 코루틴의 범위, 코루틴 블록을 묶음으로 제어할수 있는 단위
 
+### Dispatcher
+Dispatcher 는 CoroutineContext 의 주요 요소 입니다.
+CoroutineContext 을 상속받아 어떤 스레드를 이용해서 어떻게 동작할것인지를 미리 정의해 두었습니다.
+
+- Dispatchers.Default : CPU 사용량이 많은 작업에 사용합니다. 주 스레드에서 작업하기에는 너무 긴 작업 들에게 알맞습니다.
+- Dispatchers.IO : 네트워크, 디스크 사용 할때 사용합니다. 파일 읽고, 쓰고, 소켓을 읽고, 쓰고 작업을 멈추는것에 최적화되어 있습니다.
+- Dispatchers.Main : 안드로이드의 경우 UI 스레드를 사용합니다.
+
+공식문서에 의하면 IO Dispatcher가 사용하는 스레드 풀의 최대 스레드 갯수는 64개를 넘지 않는다.
+
+IO Dispatcher는 Default Dispatcher와 스레드 풀을 공유한다.
+즉, 기존의 CPU 코어 만큼의 스레드(Default)에 64개의 스레드(IO)가 추가되므로 내 경우 최대 76개의 스레드가 생성되는 것이다
 
 
+다만 동시에 돌릴 수 있는 최대 스레드는 64개로 유지된다.
+
+https://github.com/Kotlin/kotlinx.coroutines/issues/2272
 
 ### Scope builder
 
