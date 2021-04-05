@@ -55,6 +55,8 @@ https://medium.com/hongbeomi-dev/coroutines-basic-e32053f18fdf
 코루틴은 Context Switching 오버헤드가 적은 Non-blocking 일종의 경량 스레드라고 할 수 있습니다. 
 코루틴은 프로그램이 실행 중일 때 특정 시점에 코루틴으로 이동하여 그 전에 실행하던 루틴을 정지하도록 하게 할 수 있습니다. 
 
+### DroidKnights  Kotlin 코루틴은 어떻게 동작하는가?
+https://www.youtube.com/watch?v=usaD7HyN598
 
 ### Basic
 https://medium.com/@limgyumin/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%BD%94%EB%A3%A8%ED%8B%B4%EC%9D%98-%EA%B8%B0%EC%B4%88-cac60d4d621b
