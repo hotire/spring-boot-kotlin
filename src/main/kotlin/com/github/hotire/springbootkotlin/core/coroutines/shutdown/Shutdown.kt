@@ -7,10 +7,11 @@ import kotlinx.coroutines.asExecutor
 import kotlinx.coroutines.async
 import java.io.Closeable
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 fun main() {
     val threadPool = Executors.newFixedThreadPool(4)
-    threadPool.awaitTermination(10)
+    threadPool.awaitTermination(10L, TimeUnit.SECONDS)
     val dispatcher = threadPool.asCoroutineDispatcher()
 
     CoroutineScope(dispatcher).async {
