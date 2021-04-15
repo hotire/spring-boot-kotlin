@@ -181,6 +181,29 @@ by 키워드를 사용해 클래스를 위임할 수 있다.
 
 그래도 이상하게 장황한 자바가 좋네.
 
+
+~~~kotlin
+class C { var prop: Type by MyDelegate() }
+~~~
+
+~~~kotlin
+class C { 
+   private val prop$delegate = MyDelegate()
+   var prop: Type
+        get() = prop$delegate.getValue(this, this::prop)
+        set(value: Type) = prop$delegate.setValue(this, this::prop, value)     
+}
+~~~
+
+
+- Translation Rules
+위임된 프로퍼티를 위해 코틀린 컴파일러는 먼저 보조 프로퍼티를 생성한 후 그것에 위임을 한다.
+
+아래 예제 코드의 동작을 보면, prop 프로퍼티를 위해 prop$delegate 라는 숨겨진 프로퍼티가 생성되고 접근자들(get()/set())의 코드에서 단순히 이 추가된 프로퍼티로 위임을 한다.
+
+
+
+
 ### Singleton
 
 Singleton으로 객체를 생성하고 싶으면 object 키워드를 붙인다.

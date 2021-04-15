@@ -1,4 +1,4 @@
-package com.github.hotire.springbootkotlin.log
+package com.github.hotire.springbootkotlin.utils.log
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
