@@ -18,6 +18,8 @@
 
 https://medium.com/mobile-app-development-publication/understanding-suspend-function-of-coroutines-de26b070c5ed
 
+## Kotlin의 프로퍼티 위임과 초기화 지연은 어떻게 동작하는가
+https://medium.com/til-kotlin-ko/kotlin-delegated-property-by-lazy%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-74912d3e9c56
 
 
 ### References
