@@ -1,17 +1,24 @@
 package com.github.hotire.springbootkotlin.delegate
 
+
 class LazyDelegate {
-    val text by lazy {
+
+    var name: String? = null
+
+    val text: MutableMap<String, String> by lazy {
         println("init")
-        "hello"
+        val map = mutableMapOf("a" to "b")
+        map
     }
 }
-
 
 fun main() {
     val lazyDelegate = LazyDelegate()
     println("before")
-    lazyDelegate.text
+    lazyDelegate.name = "hotire"
+    println(lazyDelegate.text)
+    lazyDelegate.text["b"] = "c"
     println("after")
-    lazyDelegate.text
+    lazyDelegate.name = "hotire2"
+    println(lazyDelegate.text)
 }
