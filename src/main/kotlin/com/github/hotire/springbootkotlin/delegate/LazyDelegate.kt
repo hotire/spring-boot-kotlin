@@ -1,6 +1,5 @@
 package com.github.hotire.springbootkotlin.delegate
 
-
 class LazyDelegate {
 
     var name: String? = null
