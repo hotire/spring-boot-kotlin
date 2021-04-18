@@ -44,6 +44,39 @@ class Delegate {
 
 - by lazy는 어떻게 동작하는가?
 
+~~~kotlin
+class Demo {
+    val myName : String by lazy { "John" }
+}
+~~~
+
+to 
+
+~~~kotlin
+public final class Demo {
+    @NotNull
+    private final Lazy myName$delegate;
+    
+    // $FF: synthetic field
+    static final KProperty[] $$delegatedProperties = ...
+    @NotNull
+    public final String getMyName() {
+        Lazy var1 = this.myName$delegate;
+        KProperty var3 = $$delegatedProperties[0];
+        return (String)var1.getValue();
+    }
+    public Demo() {
+        this.myName$delegate =
+            LazyKt.lazy((Function0)null.INSTANCE);
+    }
+}
+~~~
+
+1. myName에 $delegate를 붙인 필드(myName$delegate)를 생성합니다.
+2. myName$delegate의 타입이 String이 아닌 Lazy라는 점에 주의합니다.
+3. 생성자에서 myName$delegate에 대해 LazyKt.lazy()를 할당합니다.
+4. LazyKt.lazy()는 주어진 초기화 블록을 실행하는 역할을 합니다.
+
 
 ### References
 
