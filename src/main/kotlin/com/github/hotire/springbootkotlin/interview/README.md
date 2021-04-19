@@ -108,6 +108,13 @@ public fun <T> lazy(
 초기화가 되지 않은 경우 무조건 초기화를 실행하여 값을 기록합니다.
 멀티스레딩에서는 NPE 발생 가능성이 있어 안전하지 않습니다.
 
+
+## Hey Kotlin! How it works
+
+https://medium.com/til-kotlin-ko/hey-kotlin-how-it-works-f77ac72e56c5
+
+### inline에서 recursive call은 어떻게 처리되나요?
+
 ### References
 
 - https://gist.github.com/paulfranco/4453383cc6df064d03087ce7aa5a0c8c
