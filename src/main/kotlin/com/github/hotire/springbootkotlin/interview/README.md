@@ -100,6 +100,10 @@ public fun <T> lazy(
 다른 스레드는 이후 그 값을 그대로 참조합니다.
 
 
+2. PUBLICATION → SafePublicationLazyImpl
+여러 스레드에서 동시에 호출될 수 있으며, 초기화도 모든 혹은 일부의 스레드들에서 동시에 실행이 가능합니다.
+다만, 다른 스레드에서 이미 초기화된 값이 할당되었다면 별도의 초기화를 수행하지 않고, 그 값을 반환합니다.
+
 ### References
 
 - https://gist.github.com/paulfranco/4453383cc6df064d03087ce7aa5a0c8c
