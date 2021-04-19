@@ -77,6 +77,28 @@ public final class Demo {
 3. 생성자에서 myName$delegate에 대해 LazyKt.lazy()를 할당합니다.
 4. LazyKt.lazy()는 주어진 초기화 블록을 실행하는 역할을 합니다.
 
+- Lazy 구현체의 종류
+
+~~~kotlin
+@kotlin.jvm.JvmVersion
+public fun <T> lazy(
+    mode: LazyThreadSafetyMode,
+    initializer: () -> T
+): Lazy<T> =
+    when (mode) {
+        LazyThreadSafetyMode.SYNCHRONIZED ->
+            SynchronizedLazyImpl(initializer)
+        LazyThreadSafetyMode.PUBLICATION ->
+            SafePublicationLazyImpl(initializer)
+        LazyThreadSafetyMode.NONE ->
+            UnsafeLazyImpl(initializer)
+    }
+~~~
+
+1. SYNCHRONIZED → SynchronizedLazyImpl 
+기본 값으로 초기화가 최초 호출되는 단 하나의 스레드에서만 처리됩니다.
+다른 스레드는 이후 그 값을 그대로 참조합니다.
+
 
 ### References
 
