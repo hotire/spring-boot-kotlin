@@ -11,6 +11,9 @@ class Dog : Animal() {
 fun Animal.howl() = "Animal"
 fun Dog.howl() = "Dog"
 
+fun Animal.className() = this.javaClass.name
+fun Dog.className() = this.javaClass.name
+
 fun action(animal: Animal, action: (Animal) -> Unit) {
     action(animal)
 }
@@ -24,4 +27,7 @@ fun main() {
 
     action(animal) { println(it.howl()) }
     action(dog) { println(it.howl()) }
+
+    action(animal) { println(it.className()) }
+    action(dog) { println(it.className()) }
 }
