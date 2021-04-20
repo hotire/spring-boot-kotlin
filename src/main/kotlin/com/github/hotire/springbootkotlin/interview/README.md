@@ -117,9 +117,26 @@ https://medium.com/til-kotlin-ko/hey-kotlin-how-it-works-f77ac72e56c5
 
 - 지원하지 않는다.
 
-### Extensions
+## Extensions
 
 https://medium.com/til-kotlin-ko/kotlin%EC%9D%98-extension%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-part-1-7badafa7524a
+
+### Extensions은 정적으로 처리된다.
+
+~~~kotlin
+fun String.hello() : String {
+    return "Hello, $this"
+}
+public final class ExtensionsKt {
+   @NotNull
+   public static final String hello(@NotNull String $receiver) {
+      Intrinsics.checkParameterIsNotNull($receiver, "$receiver");
+      return "Hello, " + $receiver;
+   }
+}
+~~~
+hello()을 변환한하면 다음과 같다. 
+
 
 ### References
 
