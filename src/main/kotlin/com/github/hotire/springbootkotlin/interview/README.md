@@ -115,6 +115,12 @@ https://medium.com/til-kotlin-ko/hey-kotlin-how-it-works-f77ac72e56c5
 
 ### inline에서 recursive call은 어떻게 처리되나요?
 
+- 지원하지 않는다.
+
+### Extensions
+
+https://medium.com/til-kotlin-ko/kotlin%EC%9D%98-extension%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-part-1-7badafa7524a
+
 ### References
 
 - https://gist.github.com/paulfranco/4453383cc6df064d03087ce7aa5a0c8c
