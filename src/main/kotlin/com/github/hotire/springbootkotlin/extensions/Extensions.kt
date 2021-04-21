@@ -5,29 +5,37 @@ open class Animal {
 }
 
 class Dog : Animal() {
-    override fun name() = "doggy"
+    override fun name(): String = "doggy"
 }
 
-fun Animal.howl() = "Animal"
-fun Dog.howl() = "Dog"
+fun Animal.howl(): String = "Animal"
+fun Dog.howl(): String = "Dog"
 
-fun Animal.className() = this.javaClass.name
-fun Dog.className() = this.javaClass.name
+fun Animal.className(): String = this.javaClass.name
+fun Dog.className(): String = this.javaClass.name
 
-fun action(animal: Animal, action: (Animal) -> Unit) {
-    action(animal)
+fun printlnHowl(animal: Animal) {
+    println(animal.howl())
+}
+
+fun printlnName(animal: Animal) {
+    println(animal.name())
+}
+
+fun printlnClassName(animal: Animal) {
+    println(animal.className())
 }
 
 fun main() {
     val animal = Animal()
     val dog = Dog()
 
-    action(animal) { println(it.name()) }
-    action(dog) { println(it.name()) }
+    printlnHowl(animal)
+    printlnHowl(dog)
 
-    action(animal) { println(it.howl()) }
-    action(dog) { println(it.howl()) }
+    printlnName(animal)
+    printlnName(dog)
 
-    action(animal) { println(it.className()) }
-    action(dog) { println(it.className()) }
+    printlnClassName(animal)
+    printlnClassName(dog)
 }

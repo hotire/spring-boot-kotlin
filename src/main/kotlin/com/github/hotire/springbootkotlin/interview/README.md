@@ -145,6 +145,8 @@ hello()을 변환한하면 다음과 같다.
 - Extension이 리시버의 타입에 의한 가상 함수가 아니라 정적으로 처리된다는 점을 강조하고 싶습니다. 이는 호출되는 확장 함수는 표현식의 타입에 따라 결정된다는 것을 의미합니다.
 
 
+### Extension보다 멤버가 우선이다.
+
 ### References
 
 - https://gist.github.com/paulfranco/4453383cc6df064d03087ce7aa5a0c8c
