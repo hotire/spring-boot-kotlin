@@ -13,6 +13,7 @@ fun Dog.howl(): String = "Dog"
 
 fun Animal.className(): String = this.javaClass.name
 fun Dog.className(): String = this.javaClass.name
+fun Animal.toString(): String = "Extension toString"
 
 fun printlnHowl(animal: Animal) {
     println(animal.howl())
@@ -38,4 +39,7 @@ fun main() {
 
     printlnClassName(animal)
     printlnClassName(dog)
+
+    // method
+    animal.toString()
 }
