@@ -42,6 +42,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j")
+    implementation("io.github.microutils:kotlin-logging:1.12.5")
 
     // test
     implementation("org.springframework.boot:spring-boot-starter-test") {
