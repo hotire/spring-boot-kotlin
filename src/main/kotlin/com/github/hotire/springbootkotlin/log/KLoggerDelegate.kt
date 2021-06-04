@@ -1,4 +1,4 @@
-package com.github.hotire.springbootkotlin.utils.log
+package com.github.hotire.springbootkotlin.log
 
 import mu.KLogger
 import mu.KotlinLogging

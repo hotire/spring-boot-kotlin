@@ -1,6 +1,5 @@
-package com.github.hotire.springbootkotlin
+package com.github.hotire.springbootkotlin.log
 
-import com.github.hotire.springbootkotlin.utils.log.KLoggerDelegate
 import org.springframework.stereotype.Service
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping

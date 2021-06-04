@@ -1,6 +1,6 @@
 package com.github.hotire.springbootkotlin.core.coroutines.client
 
-import com.github.hotire.springbootkotlin.utils.log.LoggerDelegate
+import com.github.hotire.springbootkotlin.log.LoggerDelegate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

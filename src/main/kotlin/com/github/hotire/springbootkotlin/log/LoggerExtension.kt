@@ -1,4 +1,4 @@
-package com.github.hotire.springbootkotlin.utils.log
+package com.github.hotire.springbootkotlin.log
 
 import mu.KotlinLogging
 import org.slf4j.Logger
@@ -25,5 +25,4 @@ class LoggerDelegate : ReadOnlyProperty<Any?, Logger> {
         logger!!
         return logger!!
     }
-
 }

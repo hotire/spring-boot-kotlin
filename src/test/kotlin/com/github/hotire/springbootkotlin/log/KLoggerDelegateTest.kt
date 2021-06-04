@@ -1,6 +1,4 @@
-package com.github.hotire.springbootkotlin.utils.log
-
-import org.junit.jupiter.api.Assertions.*
+package com.github.hotire.springbootkotlin.log
 
 import org.junit.jupiter.api.Test
 
@@ -10,9 +8,7 @@ internal class KLoggerDelegateTest {
 
     @Test
     fun getValue() {
-        println(log.hashCode())
-        println(log.hashCode())
-
+        // no assert
         log.info { "hello" }
     }
 }
