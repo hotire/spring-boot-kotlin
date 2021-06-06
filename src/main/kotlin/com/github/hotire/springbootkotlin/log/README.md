@@ -5,3 +5,6 @@
 ## Idiomatic Logging in Kotlin
 https://www.baeldung.com/kotlin/logging
 
+## MicroUtils/kotlin-logging
+
+https://github.com/MicroUtils/kotlin-logging
