@@ -6,6 +6,39 @@
 
 ## let, apply, run, with
 
+https://medium.com/@fatihcoskun/kotlin-scoping-functions-apply-vs-with-let-also-run-816e4efb75f5
+
+### scoping functions 범위 지정 함수는 무엇을 하는가?
+
+- 수신 객체
+- 수신 객체 지정 람다 (lambda with receiver)
+
+### With
+
+~~~kotlin
+inline fun <T, R> with(receiver: T, block: T.() -> R): R {
+    return receiver.block()
+}
+~~~
+
+as-is
+
+~~~kotlin
+val person: Person = getPerson()
+print(person.name)
+print(person.age)
+~~~
+
+to-be
+
+~~~kotlin
+val person: Person = getPerson()
+with(person) {
+    print(name)
+    print(age)
+}
+~~~
+
 
 
 ## const and val
