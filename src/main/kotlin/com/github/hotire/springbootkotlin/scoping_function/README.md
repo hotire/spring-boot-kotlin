@@ -11,6 +11,12 @@
 - also 는 수신 객체 지정 람다 에 매개변수 T 로 코드 블록 내에 명시적으로 전달 됩니다.
 
 
+### 범위 지정 함수 의 최종적인 반환 값이 무엇인가?
+
+- with 는 람다를 실행한 결과를 반환 합니다.
+- also 는 코드 블록 내에 전달된 수신객체를 그대로 다시 반환 합니다.
+
+
 ### References
 
 https://medium.com/@fatihcoskun/kotlin-scoping-functions-apply-vs-with-let-also-run-816e4efb75f5
